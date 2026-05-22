@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Profile Management with Image Upload</h2>
+    <p>Student ID: <strong>{{ sid }}</strong></p>
+    <p>Current Display Name: <strong>{{ name }}</strong></p>
+    <p>Profile Image Filename: <code>{{ img }}</code></p>
+    <hr>
+    <form method="POST" enctype="multipart/form-data">
+        <p>Update Display Name:<br><input type="text" name="display_name" value="{{ name }}" style="width:100%; padding:5px;"></p>
+        <p>Upload Profile Picture (.jpg, .png):<br><input type="file" name="profile_pic"></p>
+        <input type="submit" value="Save Changes" style="padding: 10px 20px; background: #800000; color: white; border: none; cursor:pointer;">
+    </form>
+{% endblock %}

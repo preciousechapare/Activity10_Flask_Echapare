@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Student Directory</h2>
+<p>Total Students: {{ students|length }}</p>
+
+<ul>
+    {% for student in students %}
+        <li><strong>{{ student.full_name }}</strong> ({{ student.email }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}
