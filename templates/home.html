@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, student!</h2>
+<p>This app was built using Flask and Jinja2 templates.</p>
+
+{% if current_user.is_authenticated %}
+    <p>Welcome, <strong>{{ current_user.email }}</strong></p>
+{% endif %}
+{% endblock %}

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 venv/
+=======
+>>>>>>> 182298d2076305855036adb000d4c5954aad0de7
 .venv/
 venv_lab/
 __pycache__/

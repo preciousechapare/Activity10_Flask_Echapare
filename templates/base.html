@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Lab Activity</title>
+    <style>
+        /* Step 16: Add Hover Effect to Nav Links */
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #FFA500;
+        }
+        /* Step 20: Add Form Padding with CSS */
+        form div {
+            margin-bottom: 10px;
+        }
+        /* Step 17: Add Class to Email Field */
+        .input-field {
+            border: 1px solid #ccc;
+            padding: 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('students') }}">Students</a>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+    </nav>
+    <hr>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <p style="color: red; font-weight: bold;">{{ msg }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer style="text-align:center; padding: 10px; margin-top: 20px;">© 2025 Flask Activity</footer>
+</body>
+</html>
